@@ -19,11 +19,11 @@ public class MainViewModel extends ViewModel implements Observable {
     }
 
     public void setName(String name) {
-        callbacks.notifyChange(this, BR.buttonEnabled);
+        callbacks.notifyChange(this, BR.name);
         this.name = name;
     }
 
-    @Bindable
+    @Bindable({"name"})
     public boolean isButtonEnabled() {
         return !name.isEmpty();
     }
